@@ -15,6 +15,7 @@
 		AA0011 /* TwilioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0010 /* TwilioService.swift */; };
 		AA0013 /* CallDirectoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0012 /* CallDirectoryManager.swift */; };
 		AA0021 /* CallDirectoryHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0020 /* CallDirectoryHandler.swift */; };
+		AA0033 /* CallerLookupExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = AA0100 /* CallerLookupExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -22,10 +23,24 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = AA9999 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = AA0100;
+			remoteGlobalIDString = AA0103;
 			remoteInfo = CallerLookupExtension;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		AA0120 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				AA0033 /* CallerLookupExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		AA0000 /* CallerLookupApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallerLookupApp.swift; sourceTree = "<group>"; };
@@ -37,9 +52,11 @@
 		AA0012 /* CallDirectoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallDirectoryManager.swift; sourceTree = "<group>"; };
 		AA0020 /* CallDirectoryHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallDirectoryHandler.swift; sourceTree = "<group>"; };
 		AA0050 /* CallerLookup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CallerLookup.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		AA0100 /* CallerLookupExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CallerLookupExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA0060 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA0061 /* CallerLookup.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CallerLookup.entitlements; sourceTree = "<group>"; };
+		AA0100 /* CallerLookupExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CallerLookupExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA0110 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA0111 /* CallerLookupExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CallerLookupExtension.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +95,7 @@
 				AA0055 /* Models */,
 				AA0056 /* Services */,
 				AA0060 /* Info.plist */,
+				AA0061 /* CallerLookup.entitlements */,
 			);
 			path = CallerLookup;
 			sourceTree = "<group>";
@@ -122,6 +140,7 @@
 			children = (
 				AA0020 /* CallDirectoryHandler.swift */,
 				AA0110 /* Info.plist */,
+				AA0111 /* CallerLookupExtension.entitlements */,
 			);
 			path = CallerLookupExtension;
 			sourceTree = "<group>";
@@ -133,10 +152,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AA0070 /* Build configuration list for PBXNativeTarget "CallerLookup" */;
 			buildPhases = (
-				AA0051 /* Frameworks */,
 				AA0058 /* Sources */,
+				AA0051 /* Frameworks */,
 				AA0059 /* Resources */,
-				AA0120 /* Embed App Extensions */,
+				AA0120 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
@@ -152,8 +171,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AA0130 /* Build configuration list for PBXNativeTarget "CallerLookupExtension" */;
 			buildPhases = (
-				AA0101 /* Frameworks */,
 				AA0104 /* Sources */,
+				AA0101 /* Frameworks */,
 				AA0105 /* Resources */,
 			);
 			buildRules = (
@@ -251,19 +270,6 @@
 			targetProxy = AA0031 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		AA0120 /* Embed App Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-			);
-			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
 		AA9996 /* Debug */ = {
@@ -390,7 +396,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = CallerLookup/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -420,7 +426,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = CallerLookup/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -443,12 +449,13 @@
 		AA0131 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = CallerLookupExtension/CallerLookupExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
-				GENERATE_INFOPLIST_FILE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = CallerLookupExtension/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "CallerLookup Extension";
+				INFOPLIST_KEY_CFBundleDisplayName = CallerLookupExtension;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -468,12 +475,13 @@
 		AA0132 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = CallerLookupExtension/CallerLookupExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
-				GENERATE_INFOPLIST_FILE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = CallerLookupExtension/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "CallerLookup Extension";
+				INFOPLIST_KEY_CFBundleDisplayName = CallerLookupExtension;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
